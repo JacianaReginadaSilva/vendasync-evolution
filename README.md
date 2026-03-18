@@ -1,57 +1,22 @@
-🚀 VendaSync Evolution - Sistema de Gestão de Vendas
-O VendaSync Evolution é uma aplicação web completa para gestão de produtos e vendas, desenvolvida com foco em arquitetura limpa (MVC) e uma interface moderna (Glassmorphism). O sistema permite o gerenciamento total de itens através de uma API robusta e persistência de dados em tempo real.
+VendaSync Evolution - Sistema de Gestão Integrado
+Esta versão é a evolução completa da Atividade 1, transformando uma interface estática em uma aplicação Full Stack robusta.
 
-🛠️ Tecnologias Utilizadas
-Backend: Node.js com Framework Express.
+🚀 Evoluções Técnicas:
 
-Arquitetura: MVC (Model-View-Controller).
+Arquitetura MVC: Organização profissional dividida em Models (dados), Views (interface) e Controllers (lógica), facilitando a manutenção.
 
-Frontend: HTML5, CSS3 (Tailwind CSS) e JavaScript Vanilla.
+Back-end em Node.js: Implementação de um servidor com Express para gerenciar rotas de API RESTful.
 
-Persistência: Arquivo JSON para armazenamento de dados (NoSQL style).
+Design Glassmorphism: Interface evoluída para o modo escuro com efeitos de desfoque e transparência.
 
-Ícones: Font Awesome 6.0.
+Persistência de Dados: Uso de arquivos JSON para armazenamento permanente, garantindo que os produtos não sumam ao reiniciar o sistema.
 
-Protocolo: API RESTful (GET, POST, PUT, DELETE).
+🛠️ Checklist Técnico (Ementa):
 
-✨ Funcionalidades (CRUD)
-Cadastrar (Create): Adição de novos produtos com validação de nome, preço e categoria.
+POO: Uso de Classes para representar entidades e gerenciar regras de negócio.
 
-Listar (Read): Visualização dinâmica do catálogo de produtos consumindo a API.
+Métodos HTTP: Implementação completa de CRUD (GET, POST, PUT, DELETE).
 
-Atualizar (Update): Edição rápida de preços diretamente pela interface.
+Manipulação de Arquivos: Uso do módulo fs do Node.js para salvar e ler dados do servidor.
 
-Excluir (Delete): Remoção de produtos com confirmação de segurança.
-
-Calculadora de Vendas: Seleção de produtos com cálculo de subtotal e aplicação de descontos em tempo real.
-
-📁 Estrutura do Projeto
-Plaintext
-vendas_app.html/
-├── src/
-│   ├── controllers/
-│   │   └── produtoController.js   # Lógica das rotas
-│   ├── models/
-│   │   └── produtoModel.js        # Lógica de dados (JSON)
-│   ├── routes/
-│   │   └── produtoRoutes.js       # Definição dos endpoints
-│   └── public/
-│       ├── index.html             # Interface do usuário
-│       └── script.js              # Lógica do Frontend
-├── data/
-│   └── produtos.json              # "Banco de dados" do sistema
-├── server.js                      # Inicialização do servidor Node.js
-└── package.json                   # Dependências do projeto
-🚀 Como Executar o Projeto
-Certifique-se de ter o Node.js instalado.
-
-Abra o terminal na pasta raiz do projeto.
-
-Execute o comando:
-
-Bash
-node server.js
-Acesse no seu navegador: http://localhost:3000
-
-👩‍💻 Desenvolvido por:
-J. Regina da Silva Projeto Acadêmico - Terceiro Semestre
+Async/Await: Tratamento de promessas para integração de APIs externas e internas.
