@@ -2,8 +2,14 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
+const express = require('express');
 const app = express();
 const PORT = 3000;
+
+// Esta é a linha mágica que você adicionou:
+app.use(express.static('public')); 
+
+app.use(express.json()); // Para o servidor entender quando você envia dados JSON
 
 // 1. Middlewares (Configurações básicas)
 app.use(cors());
