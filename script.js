@@ -152,3 +152,45 @@ window.finalizar = function() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', carregarProdutosDoServidor);
+
+// --- LÓGICA DE BUSCA DE CEP (BRASIL API) ---
+const cepField = document.getElementById('cep-field');
+const apiResult = document.getElementById('api-result');
+
+if (cepField) {
+    cepField.addEventListener('blur', async () => {
+        const cep = cepField.value.replace(/\D/g, ''); 
+        
+        if (cep.length !== 8) {
+            apiResult.textContent = "CEP inválido (digite 8 números).";
+            return;
+        }
+
+        apiResult.textContent = "Buscando endereço...";
+
+        try {
+            const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+            if (!response.ok) throw new Error('Não encontrado');
+            const data = await response.json();
+            
+            apiResult.innerHTML = `
+                <span class="text-emerald-400 font-bold">Endereço Encontrado:</span><br>
+                ${data.street || 'Rua não informada'}, ${data.neighborhood || ''}<br>
+                ${data.city} - ${data.state}
+            `;
+        } catch (error) {
+            apiResult.textContent = "Erro ao buscar CEP ou não encontrado.";
+            console.error("Erro na API de CEP:", error);
+        }
+    });
+} // <--- FECHA AQUI A LÓGICA DO CEP
+
+// --- LÓGICA PARA ATUALIZAR O DESCONTO EM TEMPO REAL ---
+const discountInput = document.getElementById('discount-input');
+
+if (discountInput) {
+    // Escuta a digitação no campo de desconto
+    discountInput.addEventListener('input', () => {
+        updateTotals();
+    });
+}
